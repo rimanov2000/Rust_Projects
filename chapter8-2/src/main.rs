@@ -15,11 +15,15 @@ fn pigify(my_word: &mut str) -> String {
             mod_string.push_str("-hay");
             return mod_string;
         },
-        _ => {
+        'B' | 'b' | 'C' | 'c' | 'D' | 'd' | 'F' | 'f' | 'G' | 'g' | 'H' | 'h' |
+        'J' | 'j' | 'K' | 'k' | 'L' | 'l' | 'M' | 'm' | 'N' | 'n' | 'P' | 'p' |
+        'Q' | 'q' | 'R' | 'r' | 'S' | 's' | 'T' | 't' | 'V' | 'v' | 'W' | 'w' |
+        'X' | 'x' | 'Y' | 'y' | 'Z' | 'z'  => {
             let mut mod_string = String::from(&my_word[1..]);
             mod_string.push_str(&("-".to_string() + my_string[0].to_string().as_str() + "ay")[..]);
             return mod_string;
         },
+        _ => panic!("Non ASCII character is given!"),
     }
 }
 
